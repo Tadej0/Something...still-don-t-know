@@ -8,6 +8,7 @@ class okolje:
         self.naslov = naslov
         self.ozadje = (255,255,255)
         self.tikataka = 100
+        self.gravitacija = 10
         print "Okolje ustvarjeno..."
 
     def lastnostiOkolja(trenutni):
@@ -15,3 +16,6 @@ class okolje:
         print trenutni.sirina
         print trenutni.ozadje
         print trenutni.naslov
+
+    def popraviGravitacijo(self, popravek):
+        self.gravitacija += popravek

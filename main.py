@@ -1,5 +1,6 @@
 from osnovniDelec import osnovniDelec
 from okolje import okolje
+from podlaga import podlaga
 import pygame
 import sys
 from pygame.locals import *
@@ -9,6 +10,9 @@ ura = pygame.time.Clock()
 # OKOLJE
 glavnoOkolje = okolje(400,450,"Osnova")
 okolje.lastnostiOkolja(glavnoOkolje)
+
+# PODLAGA
+trenutnaPodlaga = podlaga(glavnoOkolje)
 
 # DELEC
 prviDelec = osnovniDelec(glavnoOkolje, 10, (0,0,0))
@@ -42,6 +46,9 @@ def posodobitevDelca(delec):
     print delec.lokacija
 
 
+
+
+
 while True:
     for event in pygame.event.get():
         if event.type == QUIT:
@@ -53,6 +60,9 @@ while True:
 
     ukazTipkovniceDelec(keys,prviDelec)
     posodobitevDelca(prviDelec)
+
+
+    pygame.draw.line(ZASLON, trenutnaPodlaga.barvaPodlage,  (trenutnaPodlaga.leviX,trenutnaPodlaga.leviY),(trenutnaPodlaga.desniX,trenutnaPodlaga.desniY),trenutnaPodlaga.debelinaCrte)
 
     ura.tick(glavnoOkolje.tikataka)
     pygame.display.update()
