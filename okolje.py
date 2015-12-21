@@ -9,6 +9,14 @@ class okolje:
         self.ozadje = (255,255,255)
         self.tikataka = 100
         self.gravitacija = 10
+        self.vrstaOkolja = 1
+
+        '''
+        Vrsta okolja:
+        1... svet je omejen na robove
+        2... svet je povezan levo desno
+        '''
+
         print "Okolje ustvarjeno..."
 
     def lastnostiOkolja(trenutni):
@@ -19,3 +27,6 @@ class okolje:
 
     def popraviGravitacijo(self, popravek):
         self.gravitacija += popravek
+
+    def definirajVrsto(self, vrednost):
+        self.vrstaOkolja = vrednost
